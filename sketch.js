@@ -31,11 +31,9 @@ function setup() {
 }
 
 function modelLoaded() {
-  print("Model Loaded!");
 }
 
 function gotPoses(poses) {
-  //  print(poses);
   if (poses.length > 0) {
     let newNoseX = poses[0].pose.keypoints[0].position.x;
     let newNoseY = poses[0].pose.keypoints[0].position.y;
@@ -64,7 +62,6 @@ function gotPoses(poses) {
     fAngle = lerp(fAngle, newAngle, 0.1);
 
     textS = map(dist(leftEyeX, leftEyeY, rightEyeX, rightEyeY), 0, width * 0.7, 0, 500);
-    print(textS);
     gotPose = true;
 
 
